@@ -291,6 +291,8 @@
 
     </dependencies>
 
+
+
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
     <build>
         <defaultGoal>install</defaultGoal>
@@ -551,6 +553,25 @@
             <name>Spring Milestone Repository</name>
             <url>https://repo.spring.io/milestone</url>
         </repository>
+
+             <!-- Change for Nexus Repo -->
+             <repository>
+                 <id>maven-releases</id>
+                 <name>maven-releases</name>
+                 <url>http://localhost:8081/repository/maven-releases/</url>
+             </repository>         
     </repositories>
+
+<distributionManagement>
+    <repository>
+        <id>maven-releases/id>
+        <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>maven-snapshot</id>
+        <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement> 
 
 </project>
